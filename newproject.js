@@ -77,7 +77,7 @@ let chargersize = document.getElementById('chargersize');
 submits.addEventListener('click', (event)=>{
       
     ind = ind+1; 
-      console.log(ind);
+    
 
     let manufacturers = document.querySelector('.manufacturer').value;
     let models = document.querySelector('.model').value;
@@ -87,7 +87,6 @@ submits.addEventListener('click', (event)=>{
     let ramsizes = document.querySelector('.ramsize').value;
     let chargersizes = document.querySelector('.chargersize').value;
 
-   console.log(ind);
 
   //constructor function
     function Laptop(manufacturer,model, color,processor,screensize,ramsize,chargersize){
@@ -104,11 +103,14 @@ submits.addEventListener('click', (event)=>{
 
     
     newlaptop = new Laptop(manufacturers,models,colors,processors,screensizes,ramsizes,chargersizes );
-    console.log(newlaptop);
+    
 
     localStorage.setItem(`result${ind}`,JSON.stringify(newlaptop));
     // console.log(`result${ind}`)
     localStorage.setItem(`ind`,ind);
+
+    let printit = JSON.parse(localStorage.getItem(`result${ind}`));
+  printgrab.innerHTML = JSON.stringify(printit);
 
     event.preventDefault();
 
@@ -117,5 +119,3 @@ submits.addEventListener('click', (event)=>{
 
 )
 //retrieving the content of the local storage and displaying it from the span tag
-let printit = JSON.parse(localStorage.getItem(`result${ind}`));
-  printgrab.innerHTML = JSON.stringify(printit);
