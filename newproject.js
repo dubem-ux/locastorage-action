@@ -108,7 +108,7 @@ submits.addEventListener('click', (event)=>{
     localStorage.setItem(`result${ind}`,JSON.stringify(newlaptop));
     // console.log(`result${ind}`)
     localStorage.setItem(`ind`,ind);
-
+    //printing the form in the span tag
     let printit = JSON.parse(localStorage.getItem(`result${ind}`));
   printgrab.innerHTML = JSON.stringify(printit);
 
@@ -118,4 +118,4 @@ submits.addEventListener('click', (event)=>{
 }
 
 )
-//retrieving the content of the local storage and displaying it from the span tag
+
